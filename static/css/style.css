@@ -2,10 +2,20 @@
     border-width: 5px;
     border-style: solid;
     border-color: black;
-    padding: 10px;
+    min-height: 100vh;
 
 }
 
-.main {
-    padding: 10px;
+.nav {
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+}
+
+
+
+.header {
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
 }
