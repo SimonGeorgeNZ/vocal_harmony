@@ -1,21 +1,25 @@
 .body {
-    border-width: 5px;
+    border-width: 3px;
     border-style: solid;
     border-color: black;
     min-height: 100vh;
+    padding-left: 100px!important;
+
 
 }
 
-.nav {
-    border-width: 5px;
+/* .main {
+    border-width: 3px;
     border-style: solid;
     border-color: black;
-}
+    padding-left: 100px!important;
+    min-height: 100%;
+} */
 
 
 
 .header {
-    border-width: 5px;
+    border-width: 3px;
     border-style: solid;
     border-color: black;
 }
