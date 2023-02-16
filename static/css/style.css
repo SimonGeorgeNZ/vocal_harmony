@@ -3,7 +3,8 @@
     border-style: solid;
     border-color: black;
     min-height: 100vh;
-    padding-left: 100px!important;
+    padding-left: 50px!important;
+    padding-right: 50px!important;
 
 
 }
@@ -22,4 +23,13 @@
     border-width: 3px;
     border-style: solid;
     border-color: black;
+    padding: 30px;
 }
+
+.keyDD {
+    padding-top: 50px;
+}
+
+/* .keyDisp {
+    display: inline
+} */

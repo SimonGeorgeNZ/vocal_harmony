@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
@@ -14,8 +14,10 @@ mongo = PyMongo(app)
 @app.route('/')
 def home():
     keySig = list(mongo.db.keys.find().sort("_id"))
+    
 
     return render_template('index.html', ks=keySig)
+
 
 if __name__ == '__main__':
     app.run()
