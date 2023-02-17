@@ -18,14 +18,16 @@
                     </button>
                     <ul class="dropdown-menu">
                         {% for keys in ks %}
-                        <li><a name="keySig" class="dropdown-item text-center" value="this" href="#">{{ keys.keySig }}</a></li>
+                        <li><a value="{{ keys.keySig }}" name="keySig" class="dropdown-item text-center" value="this" href="#">{{ keys.keySig }}</a></li>
                         
                         {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="col-9 header">
-                <p>Your key is </p>
+                <div class="header" id="keyIs">
+                    <p>Your key is </p>
+                </div>
             </div>
         </div>  
 
