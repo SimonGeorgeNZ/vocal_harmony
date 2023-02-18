@@ -6,10 +6,21 @@ buttons.forEach(button => {
 
 
 function handleClick() {
-  const key_Disp = document.createElement("p");
+  let key_Disp = document.createElement("p");
+  key_Disp.className = 'keyDisp'
+  var parent = document.getElementById('keyIs');
   key_Disp.id = this.getAttribute('value');
-  key_Disp.setAttribute('name', 'keyDisp');
-  document.getElementById('keyIs').appendChild(key_Disp);
-  key_Disp.textContent = "Something"
-  console.log(key_Disp.id)
-}
+    if (parent.children.length === 0) { 
+    document.getElementById('keyIs').appendChild(key_Disp);
+    key_Disp.textContent = this.getAttribute('value')
+    console.log("two")
+    } else  {
+      let oldKey = parent.childNodes[1];
+      document.getElementById('keyIs').removeChild(oldKey);
+      document.getElementById('keyIs').appendChild(key_Disp);
+      key_Disp.textContent = this.getAttribute('value')
+      console.log("no")
+    }
+
+  }
+

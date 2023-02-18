@@ -28,8 +28,13 @@
 
 .keyDD {
     padding-top: 50px;
+    border-left: 100px;
 }
 
-/* .keyDisp {
-    display: inline
-} */
+.keyButton {
+    padding-left: 50px;
+}
+
+.keyDisp {
+    padding-top: 20px;
+}
