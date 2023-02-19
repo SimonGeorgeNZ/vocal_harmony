@@ -13,13 +13,11 @@ function handleClick() {
     if (parent.children.length === 0) { 
     document.getElementById('keyIs').appendChild(key_Disp);
     key_Disp.textContent = this.getAttribute('value')
-    console.log("two")
     } else  {
       let oldKey = parent.childNodes[1];
       document.getElementById('keyIs').removeChild(oldKey);
       document.getElementById('keyIs').appendChild(key_Disp);
       key_Disp.textContent = this.getAttribute('value')
-      console.log("no")
     }
 
   }

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
@@ -17,12 +17,17 @@ mongo = PyMongo(app)
 MONGO_URI = os.environ.get('MONGO_URI')
 MONGO_DBNAME = os.environ.get('MONGO_DBNAME')
 
-@app.route('/')
+
+@app.route('/', methods=['GET','POST'])
 def home():
     keySig = list(mongo.db.keys.find().sort("_id"))
-    
+    selected_key = request.form.get('keySig')
+    # find_key = mongo.db.keys.find_one({"keySig":selected_key})
+    print(selected_key)
 
     return render_template('index.html', ks=keySig)
+
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
