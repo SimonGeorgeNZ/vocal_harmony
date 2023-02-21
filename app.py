@@ -20,16 +20,17 @@ MONGO_DBNAME = os.environ.get('MONGO_DBNAME')
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    key_Sig = list(mongo.db.keys.find().sort("_id"))
+    sel_key = ""
+    key_Sig = list(mongo.db.keys.find())
     if request.method == 'POST':
-        selected_key = request.form['keySig']
-        print((selected_key))
-    return render_template('index.html', ks=key_Sig)
-
+        selected_key = request.form.get('keySig')
+        sel_key = mongo.db.keys.find_one({'keySig': selected_key})
+        print(sel_key)
+    return render_template('index.html', ks=key_Sig, sk=sel_key)
 
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=False)
+            debug=True)
 
