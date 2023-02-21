@@ -23,7 +23,7 @@ def home():
     key_Sig = list(mongo.db.keys.find().sort("_id"))
     if request.method == 'POST':
         selected_key = request.form['keySig']
-        print((selected_key,))
+        print((selected_key))
     return render_template('index.html', ks=key_Sig)
 
 
